@@ -129,7 +129,7 @@ module.exports = {
 				negate_iife: false
 			}
 		}),
-		
+
 		// strip out babel-helper invariant checks
 		new ReplacePlugin([{
 			// this is actually the property name https://github.com/kimhou/replace-bundle-webpack-plugin/issues/1
@@ -139,6 +139,7 @@ module.exports = {
 
 		new OfflinePlugin({
 			relativePaths: false,
+			excludes: ['**/.*', '**/*.map', '_redirects'],
 			AppCache: false,
 			ServiceWorker: {
 				events: true

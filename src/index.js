@@ -14,9 +14,9 @@ if (process.env.NODE_ENV==='production') {
 	require('./pwa');
 }
 
-// in development, set up HMR:
+// in development, set up HMR and enable React Devools:
 if (module.hot) {
-	//require('preact/devtools');   // turn this on if you want to enable React DevTools!
+	require('preact/devtools');
 	module.hot.accept('./components/app', () => requestAnimationFrame(init) );
 }
 
